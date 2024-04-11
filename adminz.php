@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +42,6 @@ if(mysqli_num_rows($results) > 0){
 
 $sql="SELECT upr FROM users WHERE login='$login'";
 
-$result=mysqli_query($conn,$sql);
 
 echo "<div id='konto'>";
 
@@ -55,7 +57,7 @@ if($upr=="user"){
 }else if($upr=="work"){
     echo '<form action="zztouser.php" method="post">
     <input type="hidden" value="'.$login.'" name="login">
-    <input type="submit" value="change to worker">
+    <input type="submit" value="change to user">
     </form>';
 }
 
@@ -69,10 +71,6 @@ echo "</div>";
 
 <input type="button" onclick="location.href='admin.php';" value="Go back" />
 
-<form action="zztowork.php" method="post">
-<input type="hidden" value="" name="login">
-<input type="submit" value="change to worker">
-</form>
 
 </body>
 </html>

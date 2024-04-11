@@ -16,7 +16,7 @@ session_start();
 <div>
 
     <h1>Are you sure you want to log out?</h1>
-    <input id="yes" type="button" value="yes" onclick="location.href='zout.php';">
+    <input id="yes" type="button" value="Yes" onclick="location.href='zout.php';">
 
 
 
