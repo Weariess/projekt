@@ -1,0 +1,22 @@
+body{
+    margin: 0px;
+}
+#all{
+    display: grid;
+    grid-template-areas: "up" "down";
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh 80vh;
+}
+#up{
+    display: grid;
+    grid-area: up;
+    background-color: rgb(87, 87, 87);
+}
+#down{
+    display: grid;
+    grid-area: down;
+    background-color: rgb(172, 172, 172);
+}
+h1{
+    color:white;
+}
