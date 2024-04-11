@@ -18,7 +18,7 @@ session_start();
 
     <form action="rejestracja.php" method="post">
 
-        <input type="text" name="login" maxlength="30" placeholder="Login"> <!--LOGIN-->
+        <input type="text" name="login" maxlength="30" placeholder="Username"> <!--LOGIN-->
 
         <input type="password" name="pass" maxlength="32" placeholder="Password"> <!--PASSWORD-->
 
@@ -69,14 +69,14 @@ session_start();
         $results=mysqli_query($conn,$sql);
         if($results){
     
-            echo "Zarejestrowano pomyślnie";
+            header('Location: login.php');
         }else{
             echo "Błąd";
         }
 
     }else{
 
-        echo "The </br> Pick another username";
+        echo "This username is taken, please use a different one!";
     }
 
 

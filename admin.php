@@ -40,12 +40,8 @@ hahahaha
             for($i=0;$i<mysqli_num_rows($result);$i++){
                 $row = mysqli_fetch_assoc($result);
                 echo $row['login'] ." ". $row['upr'] . '<form action="adminz.php" method="post"> 
-                <input type="hidden" name="id" value="'.$row['id'].'">
                 <input type="hidden" name="login" value="'.$row['login'].'">
-                <input type="hidden" name="name" value="'.$row['imie'].'">
-                <input type="hidden" name="surname" value="'.$row['nazwisko'].'">
-                <input type="hidden" name="upr" value="'.$row['upr'].'">
-                <input type="submit" value="change"></form>';
+                <input type="submit" value="view"></form>';
             }
 
         }else{
