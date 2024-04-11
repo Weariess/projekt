@@ -21,7 +21,6 @@ session_start();
     </div>
 <div id="down">
 
-hahahaha
 <?php
 
     $s="localhost";
