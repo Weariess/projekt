@@ -68,7 +68,6 @@ session_start();
 
         $results=mysqli_query($conn,$sql);
         if($results){
-    
             header('Location: login.php');
         }else{
             echo "Błąd";

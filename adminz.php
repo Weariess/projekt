@@ -53,17 +53,17 @@ if($upr=="user"){
     echo '<form action="zztowork.php" method="post">
     <input type="hidden" value="'.$login.'" name="login">
     <input type="submit" value="change to worker">
-    </form>';
+    </form></br>';
 }else if($upr=="work"){
     echo '<form action="zztouser.php" method="post">
     <input type="hidden" value="'.$login.'" name="login">
     <input type="submit" value="change to user">
-    </form>';
+    </form></br>';
 }
-
-
-
-
+echo '<form action="usun.php" method="post">
+    <input type="hidden" value="'.$login.'" name="login">
+    <input type="submit" value="delete the user">
+    </form>';
 
 
 echo "</div>";
