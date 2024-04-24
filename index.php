@@ -11,6 +11,7 @@ session_start();
 </head>
 
 <body>
+    
 
 <?php
 
@@ -20,7 +21,7 @@ session_start();
         echo '<input type="button" onclick="location.href=`wyloguj.php`;" value="Log out">';
 
 
-
+        
 
         $s="localhost";
         $u="root";
@@ -30,19 +31,41 @@ session_start();
 
         $conn=mysqli_connect($s,$u,$p,$d);
 
+
+
         $sql="SELECT * FROM `ksiazki`";
         $result=mysqli_query($conn,$sql);
 
 
         if (mysqli_num_rows($result) > 0){
 
-            function wyp(){
-                echo "lol";
-               }
+        //user
+        $sqll="SELECT id FROM `users`";
+        $results=mysqli_query($conn,$sqll);
+
+
+        if (mysqli_num_rows($results) > 0){
+
+            
+           for($i=0;$i<mysqli_num_rows($results);$i++){
+
+            $roww = mysqli_fetch_assoc($results);
+            $idu = $roww['id'];
+            
+           }
+        }else{
+            echo "0 results";}
+        //user
+
+            
            for($i=0;$i<mysqli_num_rows($result);$i++){
 
             $row = mysqli_fetch_assoc($result);
-            echo "<div class='book'>" . $row['tytul'] . " " . $row['autor'] . '<button id="'.$row["id"].'" onclick="wyp()"> </div> </br>';
+            echo "<div class='book'>" . $row['tytul'] . " " . $row['autor'] . "<form action='iindex.php' method='post'>
+            <input type='hidden' value='".$row['idk']."' name='idk'>
+            <input type='hidden' value='$idu' name='idu'>
+            <input type='submit' value='Borrow'>
+            </form></div> </br>";
            }
 
 
