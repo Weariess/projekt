@@ -11,8 +11,8 @@ session_start();
 
     $conn=mysqli_connect($s,$u,$p,$d);
     
-
-    $sql="INSERT INTO `wypozyczenia`(`idu`, `idk`, `zatw`, `odda`) VALUES ('$idu','$idk',false,false);";
+    $date = date("Y-m-d");
+    $sql="INSERT INTO `wypozyczenia`(`idu`, `idk`, `odda`, `datawyp`) VALUES ('$idu','$idk',false,'$date');";
     
 
     $results=mysqli_query($conn,$sql);

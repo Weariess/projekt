@@ -14,14 +14,21 @@ session_start();
     
 
 <?php
+    
 
     if($_SESSION["upr"]=="user"){
 
+        //DIV PASEK
+        echo "<div id='pasek'>";
+
         echo $_SESSION['user'];
         echo '<input type="button" onclick="location.href=`wyloguj.php`;" value="Log out">';
+        echo '<input type="button" onclick="location.href=`profil.php`;" value="Profile">';
 
+        echo "</div>";
 
-        
+        //DIV KSIAZKI
+        echo "<div id='ksiazki'>";
 
         $s="localhost";
         $u="root";
@@ -39,10 +46,12 @@ session_start();
 
         if (mysqli_num_rows($result) > 0){
 
-        //user
-        $sqll="SELECT id FROM `users`";
+        //sprawdzanie czy istnieje ten user, nadawanie id usera do nastepnego kroku
+        $user = $_SESSION['user'];
+        $sqll="SELECT id FROM `users` WHERE login = '$user'";
         $results=mysqli_query($conn,$sqll);
 
+        
 
         if (mysqli_num_rows($results) > 0){
 
@@ -55,7 +64,7 @@ session_start();
            }
         }else{
             echo "0 results";}
-        //user
+        //Div z książkami i przycisk
 
             
            for($i=0;$i<mysqli_num_rows($result);$i++){
@@ -68,6 +77,7 @@ session_start();
             </form></div> </br>";
            }
 
+           echo "</div>";
 
 
           }else{
