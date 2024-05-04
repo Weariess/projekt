@@ -12,7 +12,7 @@ session_start();
     $conn=mysqli_connect($s,$u,$p,$d);
     
     $date = date("Y-m-d");
-    $sql="INSERT INTO `wypozyczenia`(`idu`, `idk`, `odda`, `datawyp`) VALUES ('$idu','$idk',false,'$date');";
+    $sql="INSERT INTO `wypozyczenia`(`idu`, `idk`, `datawyp`) VALUES ('$idu','$idk','$date');";
     
 
     $results=mysqli_query($conn,$sql);

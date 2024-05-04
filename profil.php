@@ -32,7 +32,7 @@ session_start();
 
     $user = $_SESSION['user'];
 
-    $sql="SELECT tytul, autor, datawyp FROM `wypozyczenia`,`users`,`ksiazki` WHERE idu=users.id AND ksiazki.idk=wypozyczenia.idk AND users.login='$user';";
+    $sql="SELECT idw, tytul, autor, datawyp, dataod FROM `wypozyczenia`,`users`,`ksiazki` WHERE idu=users.id AND ksiazki.idk=wypozyczenia.idk AND users.login='$user' AND wypozyczenia.dataod is NULL;";
 
     $result=mysqli_query($conn,$sql);
 
@@ -41,7 +41,12 @@ session_start();
         for($i=0;$i<mysqli_num_rows($result);$i++){
 
             $row = mysqli_fetch_assoc($result);
-            echo "<div class='ksiazki'><h2>".$row['tytul']."</h2> <h2>".$row['autor']."</h2> <h3>".$row['datawyp']."</h3></div>";
+            echo "<div class='ksiazki'><h2>".$row['tytul']."</h2> <h2>".$row['autor']."</h2> <h3>".$row['datawyp']."</h3>
+            <form action='profil.php' method='post'>
+                <input type='hidden' value='".$row['idw']."' name='id'>
+                <input type='submit' value='Give back'>
+            </form>
+            </div>";
             
         }
         
@@ -51,12 +56,26 @@ session_start();
         echo "YOU DON'T HAVE ANY BOOKS BORROWED";
     }
 
+    if(isset($_POST['id'])){
+
+        $id = $_POST['id'];
+        $date = date("Y-m-d");
+
+        $sqll = "UPDATE `wypozyczenia` SET `dataod`='$date' WHERE idw = $id";
+
+        if(mysqli_query($conn,$sqll)){
+            header('Location: profil.php');
+        }else{
+            echo "ups";
+        }
+
+    }
+
 ?>
 </div>
 
 <div id="historia">
 </div>
-
 
     
 </body>

@@ -58,7 +58,7 @@ session_start();
 
         echo mysqli_error($conn);
         echo mysqli_connect_error();
-        echo "nie zalogowano";
+        echo "Wrong login or password";
 
     
 

@@ -7,6 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleindex.css">
     <title>Library</title>
 </head>
 
@@ -20,11 +21,18 @@ session_start();
 
         //DIV PASEK
         echo "<div id='pasek'>";
+        //DIV welcome i profil
+        echo "<div id='ok'>";
+        echo "<h2>Welcome ".$_SESSION['user']."!</h2>";
+        
+        echo '<input type="button" onclick="location.href=`profil.php`;" value="Your profile">';
+        echo "</div>";
 
-        echo $_SESSION['user'];
-        echo '<input type="button" onclick="location.href=`wyloguj.php`;" value="Log out">';
-        echo '<input type="button" onclick="location.href=`profil.php`;" value="Profile">';
-
+        //DIV main page
+        echo "<div id='main'><h1>MAIN PAGE</h1></div>";
+        
+        //DIV wyloguj
+        echo '<input id="wyloguj" type="button" onclick="location.href=`wyloguj.php`;" value="Log out">';
         echo "</div>";
 
         //DIV KSIAZKI
@@ -40,7 +48,7 @@ session_start();
 
 
 
-        $sql="SELECT * FROM `ksiazki`";
+        $sql="SELECT * FROM `ksiazki` WHERE dostepne=1";
         $result=mysqli_query($conn,$sql);
 
 
@@ -94,8 +102,8 @@ session_start();
     }else if($_SESSION["upr"]=="admin"){
         header('Location: admin.php');
     }
-    else{
-        header('Location: rejestracja.php');
+    else if($_SESSION['upr']=="work"){
+        header('Location: worker.php');
     }
 
 ?>

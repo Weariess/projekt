@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    display: grid;
+    grid-template-areas: "pasek" "ksiazki";
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh 80vh;
+
+}
+
+#pasek{
+    grid-area: pasek;
+    background-color: #82b2da;
+    color: white;
+    display: grid;
+    grid-template-areas: "ok" "main";
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100vh;
+    padding-left: 25px;
+
+}
+#main{
+    display: flex;
+    padding-left: 345px;
+    padding-top: 20px;
+}
+#ksiazki{
+    grid-area: ksiazki;
+    background-color: #b9e0ff;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    
+    
+}
+.book{
+    background-color: #82b2da;
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 5px;
+    
+}
+input[id=wyloguj]{
+    position: absolute;
+    height: 40px;
+    width: 70px;
+    top:5px;
+    right: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5f91b9;
+
+}
+input[type=submit]{
+    height: 30px;
+    width: 60px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5f91b9;
+
+}
+input[type=button]{
+    height: 30px;
+    width: 90px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5f91b9;
+
+}
