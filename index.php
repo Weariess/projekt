@@ -78,7 +78,7 @@ session_start();
            for($i=0;$i<mysqli_num_rows($result);$i++){
 
             $row = mysqli_fetch_assoc($result);
-            echo "<div class='book'>" . $row['tytul'] . " " . $row['autor'] . "<form action='iindex.php' method='post'>
+            echo "<div class='book'>" . $row['tytul'] . "</br> " . $row['autor'] . "<form action='iindex.php' method='post'>
             <input type='hidden' value='".$row['idk']."' name='idk'>
             <input type='hidden' value='$idu' name='idu'>
             <input type='submit' value='Borrow'>

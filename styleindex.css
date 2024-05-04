@@ -4,6 +4,7 @@ body{
     grid-template-areas: "pasek" "ksiazki";
     grid-template-columns: 100%;
     grid-template-rows: 20vh 80vh;
+    overflow-y: hidden;
 
 }
 
@@ -16,11 +17,12 @@ body{
     grid-template-columns: 20% 80%;
     grid-template-rows: 100vh;
     padding-left: 25px;
+    border: 2px solid #5f91b9;
 
 }
 #main{
     display: flex;
-    padding-left: 345px;
+    padding-left: 325px;
     padding-top: 20px;
 }
 #ksiazki{
@@ -34,13 +36,14 @@ body{
     flex-wrap: wrap;
     row-gap: 10px;
     column-gap: 10px;
+    overflow-y: scroll;
     
     
 }
 .book{
     background-color: #82b2da;
     height: 150px;
-    width: 200px;
+    width: 187px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -49,6 +52,7 @@ body{
     align-items: center;
     text-align: center;
     row-gap: 5px;
+    border: 2px solid #5f91b9;
     
 }
 input[id=wyloguj]{
