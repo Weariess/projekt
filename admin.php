@@ -14,7 +14,7 @@ session_start();
 <div id="all">
     <div id="up">
         <h1>ADMIN PAGE</h1>
-        <input type="button" onclick="location.href=`wyloguj.php`;" value="Log out">
+        <input type="button" id="wyloguj" onclick="location.href=`wyloguj.php`;" value="Log out">
 
         
     
@@ -38,9 +38,9 @@ session_start();
             
             for($i=0;$i<mysqli_num_rows($result);$i++){
                 $row = mysqli_fetch_assoc($result);
-                echo $row['login'] ." ". $row['upr'] . '<form action="adminz.php" method="post"> 
+                echo "<div id='us'>".$row['login'] .": ". $row['upr'] . '<form action="adminz.php" method="post"> 
                 <input type="hidden" name="login" value="'.$row['login'].'">
-                <input type="submit" value="view"></form>';
+                <input type="submit" value="view"></form></div>';
             }
 
         }else{

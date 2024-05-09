@@ -49,6 +49,9 @@ input[type="submit"] {
 input[type="button"]{
     background-color: #5f91b9;
     color: #fff;
+    border: none;
+    height: 25px;
+    border-radius: 4px;
 }
 h1{
     color:white;

@@ -21,9 +21,10 @@ session_start();
 
         <input type="text" name="title" maxlength="50" placeholder="Title"> <!--title-->
 
-        <input type="password" name="author" maxlength="50" placeholder="Author"> <!--author-->
+        <input type="text" name="author" maxlength="50" placeholder="Author"> <!--author-->
+</br>
 
-        <input type="submit" value="Add book">
+        <input type="submit" id="sub" value="Add book">
     </form>
 
 <?php
