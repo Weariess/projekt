@@ -11,18 +11,29 @@ body{
     background-color: #82b2da;
     padding-top: 100px;
     overflow-y: scroll;
+    padding-left: 10px;
+    padding-bottom: 20px;
 
 }
 #historia{
+    display: flex;
     grid-area: historia;
     background-color: #accfeb;
     overflow-y: scroll;
+    row-gap: 10px;
+    column-gap: 10px;
+    flex-direction: column;
+    padding-left: 5px;
+    padding-bottom: 20px;
 }
 .ksiazkii{
     height: 150px;
-    width: 250px;
+    width: 260px;
     background-color: #82b2da;
     border-radius: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    
 }
 #prof{
     color: #5f91b9;
@@ -34,4 +45,30 @@ body{
     background-color: #b9e0ff;
     border: 2px solid #5f91b9;
     border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    row-gap: 5px;
+    padding-left: 10px;
+}
+input[id=go]{
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    height: 40px;
+    width: 70px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5f91b9;
+}
+input[type=submit]{
+    height: 30px;
+    width: 70px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5f91b9;
+
 }

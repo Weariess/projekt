@@ -54,7 +54,7 @@ session_start();
 
 
     }else{
-        echo "YOU DON'T HAVE ANY BOOKS BORROWED";
+        echo "<h1>YOU DON'T HAVE ANY BOOKS BORROWED</h1>";
     }
 
     if(isset($_POST['id'])){
@@ -90,7 +90,7 @@ if(mysqli_num_rows($results)>0){
     for($j=0;$j<mysqli_num_rows($results);$j++){
 
         $row = mysqli_fetch_assoc($results);
-        echo "<div class='ksiazkii'><h2>".$row['tytul']."</h2> <h2>".$row['autor']."</h2> <h3>Data oddania: ".$row['dataod']."</h3>
+        echo "<div class='ksiazkii'><h2>".$row['tytul']."</h2> <h2>".$row['autor']."</h2> <h3>Date of submission: ".$row['dataod']."</h3>
             
             </div>";
     }
