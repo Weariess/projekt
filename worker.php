@@ -6,11 +6,59 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="workerstyle.css">
     <title>Worker page</title>
 </head>
 <body>
+    <div id="ok">
+        <input id="wyloguj" type="button" onclick="location.href=`wyloguj.php`;" value="Log out">
+        <h1>WORKER PAGE</h1>
+    </div>
 
-<div id='work'></div>
+<div id='work'>
+
+<form action="worker.php" method="post">
+
+        <input type="text" name="title" maxlength="50" placeholder="Title"> <!--title-->
+
+        <input type="password" name="author" maxlength="50" placeholder="Author"> <!--author-->
+
+        <input type="submit" value="Add book">
+    </form>
+
+<?php
+
+    $s="localhost";
+    $u="root";
+    $p="";
+    $d="biblioteka";
+
+
+    $conn=mysqli_connect($s,$u,$p,$d);
+
+    if(@$_POST['title']!="" && @$_POST['author']!=""){
+
+        @$title = $_POST['title'];
+
+        @$author = $_POST['author'];
+
+
+        $sqll="INSERT INTO `ksiazki`(`tytul`, `autor`, `dostepne`) VALUES ('$title','$author',1)";
+
+        if(mysqli_query($conn,$sqll)){
+            header('Location: worker.php');
+        }else{
+            echo "ups";
+        }
+
+    }else{
+        echo "";
+    }
+
+?>
+
+
+</div>
 
 
 <div id='books'>

@@ -75,6 +75,29 @@ session_start();
 </div>
 
 <div id="historia">
+
+<h1>Rental history</h1>
+
+<?php
+
+$sqll = "SELECT idw, dataod, tytul, autor FROM `wypozyczenia`,`users`,`ksiazki` WHERE users.login = '$user' AND dataod is not NULL AND idu=users.id AND ksiazki.idk=wypozyczenia.idk ORDER BY dataod";
+
+$results = mysqli_query($conn,$sqll);
+
+if(mysqli_num_rows($results)>0){
+
+    for($j=0;$j<mysqli_num_rows($results);$j++){
+
+        $row = mysqli_fetch_assoc($results);
+        echo "<div class='ksiazkii'><h2>".$row['tytul']."</h2> <h2>".$row['autor']."</h2> <h3>Data oddania: ".$row['dataod']."</h3>
+            
+            </div>";
+    }
+}
+
+
+?>
+
 </div>
 
     
