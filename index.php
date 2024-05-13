@@ -104,7 +104,8 @@ session_start();
     }
     else if($_SESSION['upr']=="work"){
         header('Location: worker.php');
-    }
+    }else header('Location: rejestracja.php')
+    
 
 ?>
     
